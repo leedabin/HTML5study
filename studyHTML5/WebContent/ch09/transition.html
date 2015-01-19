@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="prefixfree.min.js"></script>
+<style type="text/css">
+.box {
+	width: 100px;
+	height: 100px;
+	background-color: orange;
+	transition-duration: 2s;
+}
+
+.box:hover {
+	width: 200px;
+	height: 200px;
+}
+
+.box:active {
+	background-color: red;
+}
+
+#graph {
+	width: 610px;
+	border: 3px solid black;
+}
+
+.bar {
+	width: 10px;
+	height: 50px;
+	background-color: orange;
+	margin: 5px;
+	transition-duration: 5s;
+}
+
+#graph:hover>.bar {
+	width: 600px;
+}
+
+.bar:nth-child(1) {
+	transition-delay: 0s;
+	transition-timing-function: linear;
+}
+
+.bar:nth-child(2) {
+	transition-delay: 0s;
+	transition-timing-function: ease;
+}
+
+.bar:nth-child(3) {
+	transition-delay: 0s;
+	transition-timing-function: ease-in;
+}
+
+.bar:nth-child(4) {
+	transition-delay: 0s;
+	transition-timing-function: ease-in-out;
+}
+
+.bar:nth-child(5) {
+	transition-delay: 0s;
+	transition-timing-function: cubic-bezier(0.19, 0.98, 0.32, .08);
+}
+
+#box2 {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	text-align: center;
+	background: linear-gradient(top, #cb60b3 0%, #db36a4 100%);
+	animation-name: rint;
+	animation-duration:2s;
+	animation-timing-function: linear;
+}
+
+#box2>h1 {
+	line-height: 200px;
+}
+
+@keyframes rint {
+
+from { left:0;
+		transfrom: rotate(0deg);
+}
+
+50%{
+	left:500px;	
+}
+to {
+	left: 500px;
+	transform: rotate(360deg);
+}
+}
+</style>
+</head>
+<body>
+	<div class="box"></div>
+
+	<div id="graph">
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+	</div>
+
+	<div class="box2">
+		<h1>Rotation</h1>
+	</div>
+</body>
+</html>
